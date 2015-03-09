@@ -13,6 +13,7 @@
 	NSMutableArray* _actions;
 	NSMutableArray* _didDismissActions;
 	id _observer;
+	void (^_clickedButtonAction)();
 }
 
 -(instancetype)init{
@@ -29,6 +30,12 @@
 -(void)dealloc{
 	NBULogVerbose(@"dealloc");
 }
+
+
+-(void)setClickedButtonAction:(void (^)(NNAlertView* alertView, NSInteger buttonIndex))action{
+	_clickedButtonAction = action;
+}
+
 
 
 -(void)addButtonWithTitle:(NSString*)title action:(void (^)(void))action{
@@ -56,6 +63,10 @@
 	void (^action)() = _actions[buttonIndex];
 	if( action ){
 		action();
+	}
+	
+	if( _clickedButtonAction ){
+		_clickedButtonAction( self, buttonIndex );
 	}
 }
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{

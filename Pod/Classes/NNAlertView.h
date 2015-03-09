@@ -11,5 +11,6 @@
 @interface NNAlertView : UIAlertView <UIAlertViewDelegate>
 
 -(void)addButtonWithTitle:(NSString*)title action:(void (^)(void))action;
+-(void)setClickedButtonAction:(void (^)(NNAlertView* alertView, NSInteger buttonIndex))action;
 
 @end
