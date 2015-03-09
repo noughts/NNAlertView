@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'NNAlertView', :exclusive => true do
+  pod "NNAlertView", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "NNAlertView", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
