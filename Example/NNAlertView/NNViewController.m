@@ -21,6 +21,10 @@
 	[alert addButtonWithTitle:@"hoge" action:^{
 		NSLog( @"hoge" );
 	}];
+	[alert setClickedButtonAction:^(NNAlertView *alertView, NSInteger buttonIndex) {
+		NSString* title = [alertView buttonTitleAtIndex:buttonIndex];
+		NSLog( @"%@番目のボタンをクリックしました。title=%@", @(buttonIndex), title );
+	}];
 	[alert show];
 }
 
