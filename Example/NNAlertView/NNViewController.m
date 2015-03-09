@@ -7,17 +7,21 @@
 //
 
 #import "NNViewController.h"
-
-@interface NNViewController ()
-
-@end
+#import <NNAlertView.h>
 
 @implementation NNViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	NNAlertView* alert = [NNAlertView new];
+	alert.message = @"message";
+	[alert addButtonWithTitle:@"cancel" action:nil];
+	[alert addButtonWithTitle:@"hoge" action:^{
+		NSLog( @"hoge" );
+	}];
+	[alert show];
 }
 
 - (void)didReceiveMemoryWarning
