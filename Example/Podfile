@@ -1,7 +1,10 @@
+source 'https://github.com/noughts/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+
 
 target 'NNAlertView', :exclusive => true do
   pod "NNAlertView", :path => "../"
+  pod "NBULog"
 end
 
 target 'Tests', :exclusive => true do

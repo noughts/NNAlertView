@@ -8,6 +8,8 @@
 
 #import "NNViewController.h"
 #import <NNAlertView.h>
+#import <NBULog.h>
+
 
 @implementation NNViewController
 
@@ -24,11 +26,11 @@
 	alert.message = @"message";
 	[alert addButtonWithTitle:@"cancel"];
 	[alert addButtonWithTitle:@"hoge" action:^{
-		NSLog( @"hoge" );
+		NBULogInfo( @"hoge" );
 	}];
 	[alert setClickedButtonAction:^(NNAlertView *alertView, NSInteger buttonIndex) {
 		NSString* title = [alertView buttonTitleAtIndex:buttonIndex];
-		NSLog( @"%@番目のボタンをクリックしました。title=%@", @(buttonIndex), title );
+		NBULogInfo( @"%@番目のボタンをクリックしました。title=%@", @(buttonIndex), title );
 	}];
 	[alert show];
 }
@@ -40,7 +42,7 @@
 	[alert addButtonWithTitle:@"hoge"];
 	[alert setClickedButtonAction:^(NNAlertView *alertView, NSInteger buttonIndex) {
 		NSString* title = [alertView buttonTitleAtIndex:buttonIndex];
-		NSLog( @"%@番目のボタンをクリックしました。title=%@", @(buttonIndex), title );
+		NBULogInfo( @"%@番目のボタンをクリックしました。title=%@", @(buttonIndex), title );
 	}];
 	[alert show];
 }

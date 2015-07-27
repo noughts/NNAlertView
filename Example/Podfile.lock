@@ -1,21 +1,23 @@
 PODS:
-  - CocoaLumberjack (2.0.0):
-    - CocoaLumberjack/Default (= 2.0.0)
-    - CocoaLumberjack/Extensions (= 2.0.0)
-  - CocoaLumberjack/Core (2.0.0)
-  - CocoaLumberjack/Default (2.0.0):
+  - CocoaLumberjack (2.0.1):
+    - CocoaLumberjack/Default (= 2.0.1)
+    - CocoaLumberjack/Extensions (= 2.0.1)
+  - CocoaLumberjack/Core (2.0.1)
+  - CocoaLumberjack/Default (2.0.1):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.0):
+  - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
-  - Expecta (1.0.0)
+  - Expecta (1.0.2)
   - NBULog (1.2.4):
     - CocoaLumberjack (>= 2.0.0)
-  - NNAlertView (1.1.0):
-    - NBULog
-  - Specta (1.0.1)
+  - NBULogStub (0.1.2)
+  - NNAlertView (1.1.3):
+    - NBULogStub
+  - Specta (1.0.3)
 
 DEPENDENCIES:
   - Expecta
+  - NBULog
   - NNAlertView (from `../`)
   - Specta
 
@@ -24,10 +26,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   NBULog: 4003be6706b97a7e376ab4171c666ac7c2fbc2b2
-  NNAlertView: cd111815604e1200e24e2da7a37f56245599881b
-  Specta: 097be314a75de103703a3bf9a529dc1a398509d7
+  NBULogStub: 398fa3535e3b368d6f1cb3b32c2ac0cb81cf350c
+  NNAlertView: 85c2740e2d04cef2e3983911e9432ba110cfbb43
+  Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2

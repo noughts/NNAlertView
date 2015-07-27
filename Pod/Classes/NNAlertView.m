@@ -7,7 +7,8 @@
 //
 
 #import "NNAlertView.h"
-#import <NBULog.h>
+#import <NBULog+Stub.h>
+
 
 @implementation NNAlertView{
 	NSMutableArray* _actions;
