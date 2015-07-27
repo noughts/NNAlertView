@@ -7,7 +7,7 @@
 //
 
 #import "NNAlertView.h"
-#import <NBULog+Stub.h>
+#import <NBULogStub.h>
 
 
 @implementation NNAlertView{
