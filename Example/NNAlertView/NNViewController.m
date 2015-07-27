@@ -15,9 +15,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
+
+}
+
+
+-(IBAction)hoge:(id)sender{
 	NNAlertView* alert = [NNAlertView new];
 	alert.message = @"message";
-	[alert addButtonWithTitle:@"cancel" action:nil];
+	[alert addButtonWithTitle:@"cancel"];
 	[alert addButtonWithTitle:@"hoge" action:^{
 		NSLog( @"hoge" );
 	}];
@@ -28,10 +33,17 @@
 	[alert show];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(IBAction)fuga:(id)sender{
+	NNAlertView* alert = [NNAlertView new];
+	alert.message = @"message";
+	[alert addButtonWithTitle:@"cancel"];
+	[alert addButtonWithTitle:@"hoge"];
+	[alert setClickedButtonAction:^(NNAlertView *alertView, NSInteger buttonIndex) {
+		NSString* title = [alertView buttonTitleAtIndex:buttonIndex];
+		NSLog( @"%@番目のボタンをクリックしました。title=%@", @(buttonIndex), title );
+	}];
+	[alert show];
 }
+
 
 @end

@@ -37,14 +37,18 @@
 }
 
 
-
--(void)addButtonWithTitle:(NSString*)title action:(void (^)(void))action{
-	[self addButtonWithTitle:title action:action didDismiss:nil];
+-(NSInteger)addButtonWithTitle:(NSString *)title{
+	return [self addButtonWithTitle:title action:nil];
 }
 
 
--(void)addButtonWithTitle:(NSString *)title action:(void (^)(void))action didDismiss:(void (^)(void))didDismiss{
-	[self addButtonWithTitle:title];
+-(NSInteger)addButtonWithTitle:(NSString*)title action:(void (^)(void))action{
+	return [self addButtonWithTitle:title action:action didDismiss:nil];
+}
+
+
+-(NSInteger)addButtonWithTitle:(NSString *)title action:(void (^)(void))action didDismiss:(void (^)(void))didDismiss{
+	NSInteger buttonIndex = [super addButtonWithTitle:title];
 	if( action ){
 		[_actions addObject:action];
 	} else {
@@ -56,10 +60,17 @@
 		[_didDismissActions addObject:[NSNull null]];
 	}
 	self.cancelButtonIndex = _actions.count - 1;
+	return buttonIndex;
 }
 
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+	if( !_actions ){
+		return;
+	}
+	if( _actions.count < buttonIndex ){
+		return;
+	}
 	void (^action)() = _actions[buttonIndex];
 	if( action ){
 		action();

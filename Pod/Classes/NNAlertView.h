@@ -13,7 +13,7 @@
 /// トラック用に自由に使えます
 @property(nonatomic) NSString* identifier;
 
--(void)addButtonWithTitle:(NSString*)title action:(void (^)(void))action;
+-(NSInteger)addButtonWithTitle:(NSString*)title action:(void (^)(void))action;
 -(void)setClickedButtonAction:(void (^)(NNAlertView* alertView, NSInteger buttonIndex))action;
 
 @end
