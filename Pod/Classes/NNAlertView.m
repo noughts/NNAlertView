@@ -73,7 +73,8 @@
 		return;
 	}
 	void (^action)() = _actions[buttonIndex];
-	if( action ){
+    id obj = _actions[buttonIndex];
+	if( action && [obj isEqual:[NSNull null]]==NO ){
 		action();
 	}
 	
